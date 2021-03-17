@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="1002.0" style="-fx-background-color: #f0e68c;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="11.0" prefWidth="1002.0" style="-fx-background-color: #b8860b;" />
+      <Button fx:id="btnModifier" disable="true" layoutX="471.0" layoutY="21.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Modifier">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSupp" disable="true" layoutX="605.0" layoutY="21.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Supprimer">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="caissierTable" layoutX="239.0" layoutY="69.0" prefHeight="458.0" prefWidth="755.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="73.0" text="Id" />
+            <TableColumn fx:id="colNom" prefWidth="73.0" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="79.0" text="Prenom" />
+            <TableColumn fx:id="colLogin" prefWidth="83.0" text="Login" />
+            <TableColumn fx:id="colPw" prefWidth="100.0" text="Mot de passe" />
+            <TableColumn fx:id="colTel" prefWidth="81.0" text="Telephone" />
+            <TableColumn fx:id="colDate" prefWidth="127.0" text="Date_Embauche" />
+            <TableColumn prefWidth="138.0" text="Salaire" />
+         </columns>
+      </TableView>
+      <VBox layoutX="5.0" layoutY="22.0" prefHeight="550.0" prefWidth="217.0" spacing="7.0">
+         <children>
+            <Label style="-fx-text-fill: #b8860b;" text="Nom">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNom" prefHeight="25.0" prefWidth="206.0" promptText="Nom" />
+            <Label style="-fx-text-fill: #b8860b;" text="Prenom">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrenom" prefHeight="25.0" prefWidth="206.0" promptText="Prenom" />
+            <Label style="-fx-text-fill: #b8860b;" text="Login">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtLogin" prefHeight="25.0" prefWidth="206.0" promptText="Login" />
+            <Label style="-fx-text-fill: #b8860b;" text="Mot de passe">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPw" prefHeight="25.0" prefWidth="206.0" promptText="Mot de pasee" />
+            <Label style="-fx-text-fill: #b8860b;" text="Adresse">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtAdresse" prefHeight="25.0" prefWidth="206.0" promptText="Adresee" />
+            <Label style="-fx-text-fill: #b8860b;" text="Email">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtMail" prefHeight="25.0" prefWidth="206.0" promptText="Email" />
+            <Label style="-fx-text-fill: #b8860b;" text="Telephone">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTel" prefHeight="25.0" prefWidth="206.0" promptText="Telephone" />
+            <Label style="-fx-text-fill: #b8860b;" text="Date Embauche">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date" prefHeight="25.0" prefWidth="215.0" promptText="Date Embauche" />
+            <Label style="-fx-text-fill: #b8860b;" text="Salaire">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSalaire" prefHeight="25.0" prefWidth="206.0" promptText="Salaire" />
+            <Button fx:id="btnAjouter" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Ajouter Caissier">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</AnchorPane>

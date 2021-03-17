@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1012.0" style="-fx-background-color: #f0e68c;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="11.0" prefWidth="1012.0" style="-fx-background-color: #b8860b;" />
+      <TableView fx:id="productTable" layoutX="270.0" layoutY="80.0" prefHeight="539.0" prefWidth="731.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="65.0" text="Id_produit" />
+            <TableColumn fx:id="colCodeBarre" prefWidth="72.0" text="Code-barre" />
+            <TableColumn fx:id="colDesc" prefWidth="103.0" text="Description" />
+            <TableColumn fx:id="colPrixAchat" prefWidth="66.0" text="Prix_achat" />
+            <TableColumn fx:id="colPrixVente" prefWidth="69.0" text="Prix_vente" />
+            <TableColumn fx:id="colQuantite" prefWidth="70.0" text="Quantité" />
+            <TableColumn fx:id="colCat" prefWidth="75.0" text="Catégorie" />
+            <TableColumn fx:id="colFournisseur" prefWidth="100.0" text="Fournisseur" />
+            <TableColumn fx:id="colPromo" prefWidth="110.0" text="Promotion" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnModifier" disable="true" layoutX="495.0" layoutY="33.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Modifier">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSupp" disable="true" layoutX="609.0" layoutY="33.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Supprimer">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Button>
+      <VBox layoutX="9.0" layoutY="21.0" prefHeight="597.0" prefWidth="248.0" spacing="3.0">
+         <children>
+            <Pane prefHeight="170.0" prefWidth="206.0" style="-fx-border-color: blue;" />
+            <Label style="-fx-text-fill: #b8860b;" text="Code-barre">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodeBarre" prefHeight="25.0" prefWidth="206.0" promptText="code-barre" />
+            <Label style="-fx-text-fill: #b8860b;" text="Description">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtDesc" prefHeight="25.0" prefWidth="206.0" promptText="Description" />
+            <Label style="-fx-text-fill: #b8860b;" text="Prix achat">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrixAchat" prefHeight="25.0" prefWidth="206.0" promptText="Prix achat" />
+            <Label style="-fx-text-fill: #b8860b;" text="Prix vente">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrixVente" prefHeight="25.0" prefWidth="206.0" promptText="Prix vente" />
+            <Label style="-fx-text-fill: #b8860b;" text="Quantité">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtQuantite" prefHeight="25.0" prefWidth="206.0" promptText="Quantité" />
+            <Label style="-fx-text-fill: #b8860b;" text="Catégorie">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="34.0" prefWidth="259.0" spacing="7.0">
+               <children>
+                  <ComboBox fx:id="CbCategorie" editable="true" prefHeight="25.0" prefWidth="186.0" promptText="Catégorie" />
+                  <Button fx:id="btnAjoutCat" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="+" />
+               </children>
+            </HBox>
+            <Label style="-fx-text-fill: #b8860b;" text="Fournisseur">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIdFournisseur" prefHeight="25.0" prefWidth="206.0" promptText="Fournisseur" />
+            <Label style="-fx-text-fill: #b8860b;" text="Promotion">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPromo" prefHeight="25.0" prefWidth="206.0" promptText="Promotion" />
+            <Button fx:id="btnAjouter" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" style="-fx-background-color: #b8860b; -fx-background-radius: 10;" text="Ajouter produit">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
