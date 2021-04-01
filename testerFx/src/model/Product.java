@@ -3,23 +3,24 @@ package model;
 public class Product {
 	
 	private String ProductID;
-	private int CodeBarre;
     private String ProductName;
     private Double BuyingPrice;
     private Double SellingPrice;
     private String ProductCat;
+    private String Fournisseur;
     private int Qte;
+   
     
     
-	public Product(String productID, int codeBarre, String productName, Double buyingPrice, Double sellingPrice,
-			String productCat, int qte) {
+	public Product(String productID, String productName, Double buyingPrice, Double sellingPrice,
+			String productCat,String fournisseur,int qte ) {
 		super();
 		ProductID = productID;
-		CodeBarre = codeBarre;
 		ProductName = productName;
 		BuyingPrice = buyingPrice;
 		SellingPrice = sellingPrice;
 		ProductCat = productCat;
+		Fournisseur = fournisseur;
 		Qte = qte;
 	}
 
@@ -37,16 +38,6 @@ public class Product {
 
 	public void setProductID(String productID) {
 		ProductID = productID;
-	}
-
-
-	public int getCodeBarre() {
-		return CodeBarre;
-	}
-
-
-	public void setCodeBarre(int codeBarre) {
-		CodeBarre = codeBarre;
 	}
 
 
@@ -79,7 +70,6 @@ public class Product {
 		SellingPrice = sellingPrice;
 	}
 
-
 	public String getProductCat() {
 		return ProductCat;
 	}
@@ -87,6 +77,14 @@ public class Product {
 
 	public void setProductCat(String productCat) {
 		ProductCat = productCat;
+	}
+	public String getFournisseur() {
+		return Fournisseur;
+	}
+
+
+	public void setFournisseur(String fournisseur) {
+		Fournisseur = fournisseur;
 	}
 
 
@@ -98,10 +96,7 @@ public class Product {
 	public void setQte(int qte) {
 		Qte = qte;
 	}
-	
-	
 
-    
-    
-    
+
+
 }

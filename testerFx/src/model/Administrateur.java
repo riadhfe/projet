@@ -11,7 +11,7 @@ public class Administrateur extends Person {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Administrateur(int iD, String firstName, String lastName, int phoneNbr, String username, String password) {
+	public Administrateur(String iD, String firstName, String lastName, int phoneNbr, String username, String password) {
 		super(iD, firstName, lastName, phoneNbr);
 		this.username = username;
 		this.password = password;

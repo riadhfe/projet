@@ -26,7 +26,7 @@ public  Administrateur getAdmin(Administrateur a) {
 	            	while(rs.next()) {
 	            		admin.setUsername(rs.getString(1));
 		            	admin.setPassword(rs.getString(2));
-		            	return admin;
+		            	//return admin;
 		            
 		            	//con.close();
 	            }
@@ -38,10 +38,10 @@ public  Administrateur getAdmin(Administrateur a) {
 			{
 				e.printStackTrace();	
 				System.out.println("user not found !!!!");
-				return null;}
+				//return null;
 			    
 			
-		
+			}
 			 return admin;
 }
 
@@ -51,22 +51,22 @@ public  Administrateur getAdmin(Administrateur a) {
 	}
 
 	@Override
-	public Caissier getCaissier(Caissier caissier) {
+	public Caissier getCaissier(String login, String pw) {
 		// TODO Auto-generated method stub
 		Connection con = DBConnection.getConnexion();
 	    Caissier cai = new Caissier();
 			try {
-				String sql = "select * from caissier where username=? and password=?";
+				String sql = "select username, password from caissier where username = '"+login+"' and password = '"+pw+"'";
 				PreparedStatement ps = con.prepareStatement(sql);
-				ps.setString(1,caissier.getUsername());
-				ps.setString(2,caissier.getPassword());
+				//ps.setString(1,login);
+				//ps.setString(2,pw);
 	            ResultSet rs = ps.executeQuery();
 	           
 	            	while(rs.next()) {
 	            		cai.setUsername(rs.getString(1));
 	            		cai.setPassword(rs.getString(2));
 		            	}
-	            	return cai;
+	            	//return cai;
 	            }
 	           
 	            
@@ -74,11 +74,11 @@ public  Administrateur getAdmin(Administrateur a) {
 			{
 				e.printStackTrace();	
 				System.out.println("user not found !");
-				return null;}
+				//return null;
 			    
-			
+			}
 		
-			 //return cai;
+			 return cai;
 		
 	}
 

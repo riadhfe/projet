@@ -1,13 +1,15 @@
 package model;
 
-import java.sql.Date;;
+
+import java.sql.Timestamp;
+//import java.time.LocalDate;;
 
 public class Caissier extends Person {
 	
 	private String username;
 	private String password;
     private double salary;
-	private Date date_Embauche;
+	private Timestamp dateEmbauche;
 	
 	
 	public Caissier() {
@@ -16,16 +18,23 @@ public class Caissier extends Person {
 	}
 
 
-	public Caissier(int iD, String firstName, String lastName, int phoneNbr, String username, String password,
-			double salary, Date date_Embauche) {
+	public Caissier(String iD, String firstName, String lastName, int phoneNbr, String username, String password,
+			double salary,Timestamp dateEmbauche) {
 		super(iD, firstName, lastName, phoneNbr);
 		this.username = username;
 		this.password = password;
 		this.salary = salary;
-		this.date_Embauche = date_Embauche;
+		this.dateEmbauche = dateEmbauche;
 	}
 
-
+    public Caissier(String firstName, String lastName, int phoneNbr, String username, String password,
+			double salary,Timestamp dateEmbauche) {
+    	super(firstName, lastName, phoneNbr);
+    	this.username = username;
+		this.password = password;
+		this.salary = salary;
+		this.dateEmbauche = dateEmbauche;
+    }
 	public Caissier(String username, String password) {
 		// TODO Auto-generated constructor stub
 		this.username = username;
@@ -63,13 +72,13 @@ public class Caissier extends Person {
 	}
 
 
-	public Date getDate_Embauche() {
-		return date_Embauche;
+	public Timestamp getDateEmbauche() {
+		return dateEmbauche;
 	}
 
 
-	public void setDate_Embauche(Date date_Embauche) {
-		this.date_Embauche = date_Embauche;
+	public void setDateEmbauche(Timestamp dateEmbauche) {
+		this.dateEmbauche = dateEmbauche;
 	}
 	
 	
