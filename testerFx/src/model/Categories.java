@@ -1,11 +1,11 @@
 package model;
 
 public class Categories {
-private int idCat;
+private String idCat;
 private String catName;
 
 
-public Categories(int idCat, String catName) {
+public Categories(String idCat, String catName) {
 	super();
 	this.idCat = idCat;
 	this.catName = catName;
@@ -15,12 +15,12 @@ public Categories(int idCat, String catName) {
 
 
 
-public int getIdCat() {
+public String getIdCat() {
 	return idCat;
 }
 
 
-public void setIdCat(int idCat) {
+public void setIdCat(String idCat) {
 	this.idCat = idCat;
 }
 

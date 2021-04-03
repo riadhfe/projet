@@ -1,25 +1,26 @@
 package model;
 
-import java.sql.Date;
+
+import java.sql.Timestamp;
 
 public class Client extends Person {
-	private Date DateInscrit;
+	private Timestamp DateInscrit;
 
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Client(int iD, String firstName, String lastName, int phoneNbr, Date dateInscrit) {
+	public Client(String iD, String firstName, String lastName, int phoneNbr, Timestamp dateInscrit) {
 		super(iD, firstName, lastName, phoneNbr);
 		DateInscrit = dateInscrit;
 	}
 
-	public Date getDateInscrit() {
+	public Timestamp getDateInscrit() {
 		return DateInscrit;
 	}
 
-	public void setDateInscrit(Date dateInscrit) {
+	public void setDateInscrit(Timestamp dateInscrit) {
 		DateInscrit = dateInscrit;
 	}
 

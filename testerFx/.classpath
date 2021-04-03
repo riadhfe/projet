@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
 	<classpathentry kind="lib" path="C:/Users/NadaMedini/Downloads/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/NadaMedini/Downloads/jar_files (4)/controlsfx-8.40.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

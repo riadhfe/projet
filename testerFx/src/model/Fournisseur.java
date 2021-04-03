@@ -1,7 +1,7 @@
 package model;
 
 public class Fournisseur extends Person {
-	private String produit;
+	//private String produit;
 	private String adresse;
 
 	public Fournisseur() {
@@ -9,19 +9,19 @@ public class Fournisseur extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Fournisseur(int iD, String firstName, String lastName, int phoneNbr, String produit, String adresse) {
+	public Fournisseur(String iD, String firstName, String lastName, int phoneNbr, String adresse) {
 		super(iD, firstName, lastName, phoneNbr);
-		this.produit = produit;
+		//this.produit = produit;
 		this.adresse = adresse;
 	}
 
-	public String getProduit() {
+	/*public String getProduit() {
 		return produit;
 	}
 
 	public void setProduit(String produit) {
 		this.produit = produit;
-	}
+	}*/
 
 	public String getAdresse() {
 		return adresse;

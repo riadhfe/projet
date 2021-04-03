@@ -1,15 +1,23 @@
 package model;
 
 public class Person {
-	private int ID;
+	private String ID;
     private String FirstName;
     private String LastName;
     private int PhoneNbr;
     
     
-	public Person(int iD, String firstName, String lastName, int phoneNbr) {
+	public Person(String iD, String firstName, String lastName, int phoneNbr) {
 		super();
 		ID = iD;
+		FirstName = firstName;
+		LastName = lastName;
+		PhoneNbr = phoneNbr;
+	}
+
+    
+	public Person(String firstName, String lastName, int phoneNbr) {
+		super();
 		FirstName = firstName;
 		LastName = lastName;
 		PhoneNbr = phoneNbr;
@@ -22,12 +30,12 @@ public class Person {
 	}
 
 
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
 
 
-	public void setID(int iD) {
+	public void setID(String iD) {
 		ID = iD;
 	}
 

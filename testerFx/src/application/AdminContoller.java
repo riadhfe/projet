@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Categories;
 
@@ -27,88 +28,73 @@ import model.Categories;
 public class AdminContoller {
 	
 	@FXML
-	private TextField txtdesc;
-	@FXML
-	private TableView<Categories> tabCategorie;
-	@FXML
-	private TableColumn<Categories, Integer> colId;
-	@FXML
-	private TableColumn<Categories, String> colName;
-	@FXML
 	private Button btnAjouter;
 	@FXML
 	private Button btnModifier;
 	@FXML
 	private Button btnSupp;
-	
-	public void Exit (ActionEvent ev) {
-		Platform.exit();
-		
+	//Scene window;
+	//Stage win;
+	public void Exit (ActionEvent ev) throws IOException {
+		openModelWindow("View.fxml","Ingenious labs");	
 	}
 	
 	
 	
 	public void AllCategories (ActionEvent ev) throws IOException {
-	      //Aller à l'interface admin
-			Stage primaryStage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("CategoryView.fxml"));
-			Scene scene = new Scene(root);
-			primaryStage.setTitle(" Categories");
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			
-			/*lier les colonnes de la table avec les champs dans la base*/
-			
-			
-	       /*colId.setCellValueFactory(new PropertyValueFactory<Categories,Integer>("idCat"));
-	       colName.setCellValueFactory(new PropertyValueFactory<Categories,String>("nomCat"));
-	       tabCategorie.setItems(DBConnection.getCategoryList());
-	       //tabCategorie.getColumns().addAll(colId,colName);*/
-	       
+	      
+		openModelWindow("CategoryView.fxml","Categories");
 	}	
 			
 			
 			
 	public void AllProducts (ActionEvent ev) throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("ProductView.fxml"));
-		Scene scene = new Scene(root);
-		primaryStage.setTitle(" Produits");
-		primaryStage.setScene(scene);
-		primaryStage.show();
-				
+		
+		openModelWindow("ProductView.fxml","Produits");
 	  }
 	
 	public void AllCaissiers (ActionEvent ev) throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("Caissier.fxml"));
-		Scene scene = new Scene(root);
-		primaryStage.setTitle(" Caissiers");
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		openModelWindow("Caissier.fxml","Caissiers");
 				
 	  }
 	
 	public void AllFournisseurs (ActionEvent ev) throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("FournisseurView.fxml"));
-		Scene scene = new Scene(root);
-		primaryStage.setTitle(" Fournisseurs");
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		openModelWindow("FournisseurView.fxml","Fourniseurs");
 				
 	  }
 	
 	public void AllClients (ActionEvent ev) throws IOException {
-		Stage primaryStage = new Stage();
-		Parent root = FXMLLoader.load(getClass().getResource("ClientView.fxml"));
-		Scene scene = new Scene(root);
-		primaryStage.setTitle("Clients");
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		openModelWindow("ClientView.fxml","Clients");
+				
+	  }
+	public void AllPromo (ActionEvent ev) throws IOException {
+		openModelWindow("PromotionView.fxml","Promotion");
 				
 	  }
 			
+	public void openModelWindow(String resource, String title) {
+	try {
+		Parent root = FXMLLoader.load(getClass().getResource(resource));
+		Scene fxmlFile = new Scene(root);
+		Stage window = new Stage();
+		window.setScene(fxmlFile);
+		window.initModality(Modality.NONE);
+		window.setTitle(title);
+		window.show();
+		
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 }
 	
 	

@@ -2,12 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.swing.JOptionPane;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Administrateur;
 import model.Caissier;
@@ -39,6 +35,7 @@ public class Controller {
 	private RadioButton btnCaissier;
 	@FXML 
 	private Label label;
+	
 	
 	
 	
@@ -64,25 +61,23 @@ public class Controller {
 		
 	
      Administrateur adm = new Administrateur(txtLogin.getText(), txtPw.getText());
-     Caissier c = new Caissier(txtLogin.getText(), txtPw.getText());
+     //Caissier c = new Caissier(txtLogin.getText(), txtPw.getText());
      
      UsersC user= new UsersC();
      
      Administrateur admn = user.getAdmin(adm); 
-     Caissier cai = user.getCaissier(c);
+     //Caissier cai = user.getCaissier(txtLogin.getText(), txtPw.getText());
      
      if(btnAdmin.isSelected()) {
     	 if(admn!=null) {
     		 if((! txtLogin.getText().isEmpty()) && (! txtPw.getText().isEmpty())) {
     			 DBConnection.getConnexion();
-         	    //aller à l'interface admin 
-     			Stage primaryStage = new Stage();
-     			Parent root = FXMLLoader.load(getClass().getResource("Admin.fxml"));
-     			Scene scene = new Scene(root);
-     			primaryStage.setTitle("Admin View");
-     			primaryStage.setScene(scene);
-     			primaryStage.show();
     			 
+         	    //aller à l'interface admin 
+
+     			openModelWindow("Admin.fxml","Admin view");
+     			//window.close();
+     			
     		 }
     		 else {
     			 Alert alert = new Alert(AlertType.WARNING);
@@ -106,16 +101,12 @@ public class Controller {
     	 
      }
      else if (btnCaissier.isSelected()) {
-    	 if(cai!=null) {
+    	 
     		 if((! txtLogin.getText().isEmpty()) && (! txtPw.getText().isEmpty())) {
     			 DBConnection.getConnexion();
          	    //aller à l'interface caissier 
-     			Stage primaryStage = new Stage();
-     			Parent root = FXMLLoader.load(getClass().getResource("CaissierView.fxml"));
-     			Scene scene = new Scene(root);
-     			primaryStage.setTitle("Caissier View");
-     			primaryStage.setScene(scene);
-     			primaryStage.show();
+    			 Caissier cai = user.getCaissier(txtLogin.getText(), txtPw.getText());
+     			openModelWindow("CaissierView.fxml","Caissier view");
     			 
     		 }
     		 else {
@@ -127,8 +118,8 @@ public class Controller {
     			 
     		 }
     		 
-    	 }
-    	 else {
+    	 
+    	 /*else {
     		 Alert alert = new Alert(AlertType.WARNING);
     	        alert.setTitle("Alerte");
     	        alert.setHeaderText("Erreur de connection");
@@ -136,7 +127,7 @@ public class Controller {
     	        alert.show();
     			System.out.println("user n'existe pas");
     		 
-    	 }
+    	 }*/
     	 
      }
      else {
@@ -151,6 +142,25 @@ public class Controller {
 }
 	
 	
+	public void openModelWindow(String resource, String title) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource(resource));
+			Scene fxmlFile = new Scene(root);
+			Stage window = new Stage();
+			window.setScene(fxmlFile);
+			window.initModality(Modality.APPLICATION_MODAL);
+			//window.setAlwaysOnTop(true);
+			//window.setIconified(false);
+			window.setTitle(title);
+			window.showAndWait();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	
+}
 }
 	
 	
